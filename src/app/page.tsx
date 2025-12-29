@@ -120,8 +120,16 @@ export default function Home() {
               </div>
             </Stack>
             <ProofCard
-              title="Proof over hype"
-              description="Privacy: Least data possible; no secret leakage by design"
+              title="Privacy-first foundation"
+              description={
+                <>
+                  <p>Privacy: Least data possible; no secret leakage by design.</p>
+                  <p>
+                    Across offerings, Simpleflo keeps AI work cohesive with
+                    clear comparisons and traceable context.
+                  </p>
+                </>
+              }
               className="reveal"
             />
           </div>

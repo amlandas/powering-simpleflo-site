@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 type ProofCardProps = {
   title: string
-  description: string
+  description: React.ReactNode
   className?: string
 }
 
@@ -16,12 +16,14 @@ export function ProofCard({ title, description, className }: ProofCardProps) {
     <Card className={cn("soft-border surface", className)}>
       <CardHeader className="space-y-2">
         <Badge variant="secondary" className="bg-accent text-accent-foreground">
-          Evidence
+          Security
         </Badge>
         <CardTitle className="text-lg">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted-foreground">{description}</p>
+        <div className="space-y-2 text-sm text-muted-foreground">
+          {description}
+        </div>
       </CardContent>
     </Card>
   )

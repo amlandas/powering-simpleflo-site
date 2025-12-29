@@ -131,7 +131,9 @@ export default function KinetiqPage() {
                 </p>
               </div>
               <Button asChild size="lg">
-                <Link href="#">Explore Kinetiq</Link>
+                <Link href="https://kinetiq-ai-product-database-215079223818.us-west1.run.app/">
+                  Explore Kinetiq
+                </Link>
               </Button>
             </CardContent>
           </Card>

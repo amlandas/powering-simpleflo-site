@@ -138,7 +138,9 @@ export default function ScientiaPage() {
                 </p>
               </div>
               <Button asChild size="lg">
-                <Link href="#">Open Scientia</Link>
+                <Link href="https://rag-playground-web-908840126213.us-west1.run.app/playground">
+                  Open Scientia
+                </Link>
               </Button>
             </CardContent>
           </Card>
