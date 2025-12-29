@@ -1,0 +1,85 @@
+# Kinetiq
+
+<Callout tone="subtle">
+  A calmer way to choose AI tools.
+</Callout>
+
+Choosing an AI tool should feel like choosing a wrench.
+
+You shouldn’t need a week of research, five tabs of contradictory opinions, and a sixth sense for affiliate incentives. You should be able to say, “Here’s what I need,” see the tradeoffs, and move on with your work.
+
+But the ecosystem isn’t built that way yet. It’s fast, noisy, and sometimes intentionally confusing.
+
+Kinetiq is my attempt at a calmer middle layer: **a structured directory plus comparisons and analysis** designed to help you make a choice you can explain—without drowning in hype.
+
+## The problem: directories that yell
+
+Most directories are either:
+- static lists that go stale quickly, or
+- “rankings” that hide the incentives behind them.
+
+And most comparisons are either too shallow (“good for creators!”) or too technical (“supports X tokens”) without translating that into a decision.
+
+The result is decision fatigue. People either:
+- pick what they’ve heard of (brand gravity), or
+- pick what’s trending (recency bias), or
+- never pick at all (analysis paralysis).
+
+<MarginNote>
+  The best tool depends on your constraints. Kinetiq is designed to make constraints visible.
+</MarginNote>
+
+## What Kinetiq does today
+
+Kinetiq focuses on three practical loops:
+
+### 1) Browse a curated directory
+A searchable, filterable database of AI tools—organized by what they’re used for, not just what they call themselves.
+
+### 2) Compare a short list with structure
+You can select a small set (up to five) and generate a comparison matrix that’s designed to be strategic: strengths, weaknesses, and where each option fits best.
+
+### 3) Add context with grounding and analysis
+Kinetiq is designed to keep the database from becoming a museum: it can discover and refresh tool entries via search grounding, and it can summarize differences in a way that maps to real decisions.
+
+<ProofCard title="The goal">
+  Reduce decision fatigue. Increase decision confidence. Keep the process calm.
+</ProofCard>
+
+## How it works (high level)
+
+Kinetiq follows a simple pattern:
+
+- The interface stays fast and readable.
+- Requests that require model calls go to a server-side layer.
+- The server-side layer talks to the model and returns structured output for the UI to render.
+
+This matters for two reasons:
+1) It keeps keys out of the browser.
+2) It makes the comparison output predictable—something you can present as a table, not a blob of text.
+
+## How it stays grounded
+
+“AI-assisted” is a dangerously vague phrase. Kinetiq tries to make it concrete:
+
+- Comparisons are framed as tradeoffs, not verdicts.
+- Output is structured so you can inspect it.
+- The directory uses consistent dimensions so different entries can actually be compared.
+
+And importantly: Kinetiq should help you decide—not decide for you.
+
+<Callout title="A note on bias" tone="subtle">
+  Kinetiq can’t remove bias from the internet. It aims to reduce bias compared to ad-driven lists by making structure, tradeoffs, and alternatives visible.
+</Callout>
+
+## Where Kinetiq is headed
+
+The direction is simple: keep improving the “time-to-shortlist” experience without adding noise.
+
+More depth is welcome only if it makes the decision clearer.
+
+<div className="mt-8 flex gap-3 flex-wrap">
+  <Button variant="secondary" asChild>
+    <a href="/tools">Back to Library</a>
+  </Button>
+</div>

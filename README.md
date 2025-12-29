@@ -1,6 +1,6 @@
 # Simpleflo Marketing Site
 
-Production marketing site for Simpleflo, built with Next.js App Router and static-first pages.
+Marketing site for Simpleflo, built with Next.js App Router and static-first pages.
 
 ## Stack
 - Next.js (App Router, SSG)

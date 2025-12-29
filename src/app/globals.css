@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -213,6 +214,12 @@
   .container-tight {
     @apply mx-auto w-full max-w-6xl px-6 md:px-10;
   }
+  .article-grid {
+    @apply grid gap-y-6;
+  }
+  .article-rail {
+    @apply lg:col-start-2;
+  }
   .soft-border {
     @apply border border-border/70;
   }
@@ -224,6 +231,15 @@
     opacity: 0;
     transform: translateY(14px);
   }
+  .note-card {
+    @apply rounded-xl border border-border/70 bg-card/70 px-4 py-3 text-sm text-foreground/80;
+  }
+  .note-disclosure {
+    @apply rounded-xl border border-border/70 bg-card/70 px-4 py-3 text-sm text-foreground/80;
+  }
+  .note-body {
+    @apply mt-3 text-sm text-muted-foreground;
+  }
 }
 
 @keyframes reveal-up {
@@ -233,10 +249,40 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .article-grid {
+    grid-template-columns: minmax(0, 65ch) minmax(0, 16rem);
+    column-gap: 3rem;
+    justify-content: center;
+  }
+  .article-grid > * {
+    grid-column: 1;
+  }
+  .article-grid > .article-rail {
+    grid-column: 2;
+  }
+}
+
 @media (min-width: 768px) {
   body {
     background-attachment: fixed;
   }
+}
+
+.note-disclosure summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.note-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.callout strong {
+  color: var(--foreground);
+  font-weight: 600;
 }
 
 @media (prefers-reduced-motion: reduce) {

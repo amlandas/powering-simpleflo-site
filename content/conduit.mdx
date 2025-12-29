@@ -1,0 +1,63 @@
+# Conduit
+
+<Callout tone="subtle">
+  Managed connectors and personal knowledge — without setup rabbit holes. <strong>(Coming soon)</strong>
+</Callout>
+
+Modern AI tooling has a quiet tax.
+
+Not the subscription cost—the *setup cost*.
+
+You install a connector. Configure a server. Repeat the same wiring for a different tool. Then you add documents, then more documents, and eventually the model gets worse because the context is bloated and messy.
+
+The ecosystem is powerful, but it asks too much of the person using it.
+
+<MarginNote>
+  Setup work scales badly: every new tool multiplies the wiring surface area.
+</MarginNote>
+
+Conduit is the idea that this should feel boring and safe:
+
+- connector setup should be managed,
+- execution should be sandboxed by default,
+- and your personal knowledge should be served as **precise context**, not a pile of files.
+
+## The pain Conduit targets
+
+### 1) Connector setup is still manual
+Even for experienced users, connector setup is fragile: versions drift, permissions are unclear, and configuration becomes tribal knowledge.
+
+### 2) “Just add documents” doesn’t scale
+Dumping lots of documents into a tool creates context overload: the model starts to miss what matters, or it spends tokens on irrelevant text.
+
+### 3) Trust is hard
+If you’re installing third-party connectors, you need strong boundaries: least privilege, isolation, and explicit permissions.
+
+<ProofCard title="The core intent">
+  Remove undifferentiated setup work, and keep control and safety explicit.
+</ProofCard>
+
+## The direction (no hype)
+
+Conduit is not a promise of magic. It’s a design direction:
+
+- **Managed connector installs**: discover, install, and configure MCP servers through a guided experience.
+- **Personal knowledge layer**: transform your artifacts into a usable knowledge layer, so tools get the right context without bloat.
+- **Secure-by-default boundaries**: isolation, explicit permissions, and clear visibility into what a connector can access.
+
+## Security stance (as a design constraint)
+
+Conduit assumes that tools and connectors can be risky.
+
+So the default should be:
+- isolated execution boundaries,
+- explicit permission prompts,
+- and a bias toward “no” unless the user chooses otherwise.
+
+That’s not paranoia. It’s basic respect for the environment people work in.
+
+<div className="mt-8 flex gap-3 flex-wrap">
+  <Button asChild>
+    <a href="/tools">Back to Library</a>
+  </Button>
+</div>

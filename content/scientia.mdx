@@ -1,0 +1,86 @@
+# Scientia
+
+<Callout tone="subtle">
+  Knowledge exploration with traceability — grounded answers, visible sources.
+</Callout>
+
+There’s a common heartbreak in knowledge work:
+
+You upload your files, ask a careful question, and get back an answer that *sounds* right… but you can’t tell where it came from.
+
+Was it retrieved from your documents? Was it inferred? Was it invented? Did the system miss the most relevant page because chunking was weird, or because retrieval wasn’t tuned for your query?
+
+Scientia is designed around a simple belief:
+
+> An answer without visibility isn’t an answer. It’s a vibe.
+
+<MarginNote>
+  Citations aren’t about formality — they’re about control.
+</MarginNote>
+
+## What Scientia does today
+
+Scientia is built as a retrieval-augmented generation sandbox: you ingest documents, experiment with retrieval strategies, apply rerankers, and stream grounded answers with citations.
+
+In practical terms, it supports:
+
+### Hybrid retrieval
+Dense + lexical retrieval (FAISS + BM25), with reciprocal rank fusion and optional diversification (MMR).
+
+### Grounded answers (with modes)
+An answer composer that supports:
+- **document-only** mode (grounded), and
+- **doc + world context** mode when the question genuinely needs outside context
+
+…and keeps citations visible.
+
+### Streaming output with citations
+Server-sent event streaming (SSE), rendered as markdown, with citation panels and confidence badges.
+
+### Optional rerankers
+Configurable rerankers (cross-encoder or LLM-based), controlled via configuration.
+
+### Advanced graph mode (experimental)
+An optional graph-based retrieval mode for multi-hop questions, flagged off by default.
+
+### Optional auth + observability
+Optional Google sign-in to gate uploads/queries, plus an admin panel with metrics, health summaries, and diagnostics.
+
+<ProofCard title="What stays grounded">
+  Citations and retrieval traces aren’t decorative — they’re how you steer the system.
+</ProofCard>
+
+## Why traceability changes everything
+
+When retrieval is opaque, you can’t learn.
+
+You can’t tell whether a change helped or harmed. You can’t explain results to teammates. You can’t trust the tool enough to use it for important work.
+
+Scientia turns retrieval into something you can inspect:
+- what was retrieved,
+- how it was ranked,
+- how the answer was composed,
+- and where each claim came from.
+
+That makes iteration possible.
+
+## A note on “world knowledge”
+
+Sometimes the right answer genuinely needs outside context. The failure mode is when outside context is mixed in invisibly and presented as if it came from your documents.
+
+Scientia’s goal is to keep this boundary clear:
+- “From your sources” should look and feel different from
+- “From the world,” and the system should not pretend otherwise.
+
+## Who this is for
+
+Scientia tends to resonate with:
+- people doing serious learning or research who want receipts, not confident prose,
+- builders validating retrieval strategies before they ship them,
+- anyone tired of debugging retrieval blindfolded.
+
+<div className="mt-8 flex gap-3 flex-wrap">
+  <Button variant="secondary" asChild>
+    <a href="/tools">Back to Library</a>
+  </Button>
+</div>

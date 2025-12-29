@@ -1,0 +1,51 @@
+# Security
+
+<Callout tone="subtle">
+  Security-first, without security theater.
+</Callout>
+
+Some sites treat security like a badge.
+
+Simpleflo treats it like a constraint: if we can’t build something safely, we shouldn’t build it at all.
+
+That doesn’t mean paranoia. It means boring, practical decisions:
+- least privilege,
+- explicit user control,
+- and minimal data handling.
+
+<MarginNote>
+  Security is easiest when it’s legible: users can tell what’s happening and why.
+</MarginNote>
+
+## Secure defaults
+
+The default posture should be safe for normal use.
+
+If there’s a risky operation, it should feel like one:
+- the UI should make it obvious,
+- the action should be intentional,
+- and the boundary should be clear.
+
+<ProofCard title="Default posture">
+  Secure-by-default, with explicit user control for overrides.
+</ProofCard>
+
+## Minimal data handling
+
+If we don’t need data, we shouldn’t collect it.
+
+And when we do handle sensitive information—like keys, tokens, or private sources—the safest place for that is not the browser. Server-side handling exists for a reason.
+
+## Clear boundaries
+
+Good security is legible.
+
+People should be able to understand:
+- what stays local,
+- what crosses a network boundary,
+- what a connector can access,
+- and what the system will never touch.
+
+<Callout title="No certifications claimed" tone="subtle">
+  This page describes design intent and practical boundaries. It does not claim certifications.
+</Callout>
