@@ -27,7 +27,7 @@ export const contentMap: Record<
       title: "Library",
       description:
         "Notes on calmer AI workflows, plus the tools that keep decisions grounded.",
-      path: "/tools",
+      path: "/utilities",
     },
   },
   kinetiq: {
@@ -35,7 +35,7 @@ export const contentMap: Record<
     metadata: {
       title: "Kinetiq",
       description: "A calmer way to choose AI tools with structured comparisons.",
-      path: "/tools/kinetiq",
+      path: "/utilities/kinetiq",
     },
   },
   scientia: {
@@ -44,7 +44,7 @@ export const contentMap: Record<
       title: "Scientia",
       description:
         "Knowledge exploration with traceability, grounded answers, and visible sources.",
-      path: "/tools/scientia",
+      path: "/utilities/scientia",
     },
   },
   conduit: {
@@ -53,7 +53,7 @@ export const contentMap: Record<
       title: "Conduit",
       description:
         "Managed connectors and personal knowledge without setup rabbit holes.",
-      path: "/conduit",
+      path: "/utilities/conduit",
     },
   },
   principles: {

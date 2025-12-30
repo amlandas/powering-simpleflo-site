@@ -1,6 +1,8 @@
 import { Container, Section } from "@/components/layout"
 import { LeadCard, EditorialCard } from "@/components/editorial"
+import { LatestInsights } from "@/components/LatestInsights"
 import { JsonLd } from "@/components/json-ld"
+import { getBlogPosts } from "@/lib/blog"
 import { buildMetadata } from "@/lib/metadata"
 import { siteConfig } from "@/lib/site"
 
@@ -10,7 +12,9 @@ export const metadata = buildMetadata({
   path: "/",
 })
 
-export default function HomePage() {
+export default async function HomePage() {
+  const posts = await getBlogPosts()
+
   return (
     <>
       <JsonLd
@@ -55,15 +59,15 @@ export default function HomePage() {
         <Section>
           <Container>
             <div className="reading-width space-y-4">
-              <h2 className="text-2xl font-semibold text-foreground">The library</h2>
+              <h2 className="text-2xl font-semibold text-foreground">Utilities</h2>
               <p className="text-foreground/80">
-                Three tools, one intent. Each one is focused on a specific kind of clarity, so you
+                Three utilities, one intent. Each one is focused on a specific kind of clarity, so you
                 can move from curiosity to action without getting stuck in setup details.
               </p>
             </div>
             <div className="library-grid mt-8">
               <EditorialCard
-                eyebrow="AI tool database"
+                eyebrow="AI database"
                 title="Kinetiq"
                 excerpt="Kinetiq helps you choose AI tools with less guesswork. You can browse a curated catalog, compare multiple options side by side, and use Ask AI Matchmaker to get tailored recommendations based on your needs. Matchmaker shows a percentage fit, explains why it made the call, and offers strong alternatives so you can decide with confidence."
                 chips={["Discovery", "Matchmaker", "Comparisons"]}
@@ -108,6 +112,8 @@ export default function HomePage() {
             </div>
           </Container>
         </Section>
+
+        <LatestInsights posts={posts} />
 
         <Section className="pb-20">
           <Container>

@@ -37,6 +37,40 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: "/tools",
+        destination: "/utilities",
+        permanent: true,
+      },
+      {
+        source: "/tools/:path*",
+        destination: "/utilities/:path*",
+        permanent: true,
+      },
+      {
+        source: "/conduit",
+        destination: "/utilities/conduit",
+        permanent: true,
+      },
+      {
+        source: "/blog/choosing-right-ai-tool",
+        destination: "/blog/choosing-ai-tools-without-guesswork",
+        permanent: true,
+      },
+      {
+        source: "/blog/focused-functionality",
+        destination: "/blog/asking-better-questions-from-your-knowledge",
+        permanent: true,
+      },
+      {
+        source: "/blog/introducing-kinetiq",
+        destination: "/blog/bringing-private-context-to-ai-safely",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig

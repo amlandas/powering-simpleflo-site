@@ -7,7 +7,7 @@ export const metadata = buildMetadata({
   title: "Scientia — Simpleflo",
   description:
     "A knowledge explorer that retrieves grounded context, supports experimentation, and can blend in world knowledge when needed.",
-  path: "/tools/scientia",
+  path: "/utilities/scientia",
 })
 
 export default function ScientiaPage() {

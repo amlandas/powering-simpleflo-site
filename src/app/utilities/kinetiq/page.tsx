@@ -7,7 +7,7 @@ export const metadata = buildMetadata({
   title: "Kinetiq — Simpleflo",
   description:
     "A curated AI tool database with Matchmaker recommendations and side-by-side comparisons.",
-  path: "/tools/kinetiq",
+  path: "/utilities/kinetiq",
 })
 
 export default function KinetiqPage() {
@@ -16,7 +16,7 @@ export default function KinetiqPage() {
       <Section className="pt-16">
         <Container>
           <DetailHero
-            eyebrow="AI tool database"
+            eyebrow="AI database"
             title="Kinetiq"
             dek="A curated library for discovering and comparing AI tools, with recommendations that explain themselves."
             chips={["Discovery", "Matchmaker", "Comparisons"]}

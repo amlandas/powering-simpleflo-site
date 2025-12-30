@@ -7,7 +7,7 @@ export const metadata = buildMetadata({
   title: "Conduit — Simpleflo",
   description:
     "A secure way to manage connectors and bring private knowledge and personal context into AI tools.",
-  path: "/conduit",
+  path: "/utilities/conduit",
 })
 
 export default function ConduitPage() {

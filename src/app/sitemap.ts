@@ -5,13 +5,13 @@ import { siteConfig } from "@/lib/site"
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
-    "/tools",
-    "/tools/kinetiq",
-    "/tools/scientia",
+    "/utilities",
+    "/utilities/kinetiq",
+    "/utilities/scientia",
+    "/utilities/conduit",
     "/principles",
     "/security",
     "/privacy",
-    "/conduit",
   ]
 
   return routes.map((route) => ({
