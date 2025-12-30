@@ -1,0 +1,169 @@
+---
+title: "Wiring AI without duct tape"
+excerpt: "AI assistants aren't limited by intelligence anymore — they're limited by connectivity. Right now, we connect them the way early cities wired electricity: manually, inconsistently, and with more hope than rigor."
+date: "2025-06-03"
+readTime: "5 min read"
+category: "Product Updates"
+heroImage: "/blog/wiring-ai-without-duct-tape/hero.png"
+---
+
+<img
+  src="/blog/wiring-ai-without-duct-tape/hero.png"
+  alt="A vintage switchboard representing manual wiring"
+  className="w-full rounded-2xl mb-8"
+/>
+
+> AI assistants aren’t limited by intelligence anymore — they’re limited by connectivity.
+
+Standards are boring… until they change the world.
+
+A small historical curiosity: early electrical systems were a mess.
+
+Voltages varied by neighborhood. Plugs weren’t standardized. Appliances were fragile. Fires were common. The promise of electricity was real, but the wiring kept it from spreading smoothly.
+
+Then standards arrived. Safer defaults. Common interfaces. Predictable behavior. The world didn’t become exciting because wiring got glamorous — it became exciting because wiring got reliable.
+
+AI is in a similar phase today.
+
+### Rearview mirror: we’re still installing the future like it’s 2009
+
+A lot of “AI integration” is still held together by the same old rituals:
+
+*   Copy a config snippet from a README.
+*   Install dependencies that may or may not match your machine.
+*   Paste API keys into places you’ll forget later.
+*   Restart the client and hope it discovers what you installed.
+*   Repeat for the second client. And the third.
+
+When it works, it feels like you built a superpower.
+
+When it breaks, it feels like you adopted a pet raccoon.
+
+First, **wiring friction**. Even for capable people, manual setup creates a lot of tiny failure points: paths, versions, permissions, environment variables, client-specific quirks. Each one is small. Together they become a wall.
+
+The second missing ingredient is **consistency**. Many of us use multiple AI clients across the week: one for deep writing, one for coding, one for quick research, one from the terminal.
+
+But each client expects configuration in its own dialect. So “connect once” becomes “connect four times,” and you end up maintaining the same capability in multiple places like an unpaid systems integrator.
+
+The third missing ingredient is **trust**. Modern connectivity often means running third-party code on your machine.
+
+Some of it is excellent. Some of it is abandoned. Some of it is a single weekend project. And some of it — inevitably — will be malicious, or compromised, or just sloppy enough to cause damage.
+
+Most people are not trying to be reckless. They’re trying to be productive. The current ecosystem forces them to trade safety for speed far too often.
+
+> “Connect once” becomes “connect four times.”
+
+### Individuals: from “copy this JSON” to “state your intent”
+
+For an individual, the dream is surprisingly simple:
+
+*“I want my assistant to read my notes, check my tickets, and update a doc when I approve it.”*
+
+That’s not a request for a protocol. It’s a request for an outcome.
+
+So the experience should begin with intent — and only later reveal implementation details for the people who care.
+
+A sane connectivity layer should be able to:
+
+*   Find a connector that matches what you want.
+*   Install it without asking you to understand the runtime ecosystem.
+*   Store credentials somewhere safe (not in a random file).
+*   Make it available across the clients you use.
+*   Validate that it actually works.
+*   Keep it updated without breaking your week.
+
+That’s not “AI magic.” That’s basic software maturity.
+
+### Safety: don’t trust the connector; trust the sandbox
+
+Now the hard part: how do we make this safe?
+
+In my view, the default stance should be blunt:
+
+**Assume connectors are untrusted.**
+
+Not because people are evil, but because supply chains are messy. Dependencies drift. Maintainers burn out. Good projects get compromised. Accidents happen.
+
+So you contain by default.
+
+That usually means running connectors inside isolated environments, with clear permission boundaries:
+
+*   Only the folders they need (and ideally read-only unless you explicitly grant write).
+*   Only the network destinations they must talk to.
+*   Resource limits so a runaway process can’t eat your machine.
+*   Secrets stored in OS keychains, injected at runtime, never printed into logs.
+
+This isn’t paranoia. It’s the same mental model we apply to browsers, mobile apps, and any other ecosystem where third-party code meets personal data.
+
+The goal is not to make compromise impossible. The goal is to make compromise boring.
+
+<img
+  src="/blog/wiring-ai-without-duct-tape/fig-1.png"
+  alt="A simple sandbox boundary illustration"
+  className="w-full rounded-2xl mb-4 mt-8"
+/>
+<p className="text-sm text-neutral-500 italic mt-2 mb-8 text-center">Containment should be the default, not an advanced setting.</p>
+
+### Organizations: integration sprawl becomes operational drag
+
+At team scale, the “duct tape” approach doesn’t just waste time — it multiplies risk.
+
+Everyone wires things differently. Someone forgets to rotate a credential. A connector quietly breaks after an update. Another connector works only on one OS. Security teams can’t tell what’s running where, and engineers resent the friction.
+
+So the organization ends up in a familiar place: a small number of sanctioned connections, plus a long tail of unofficial workarounds.
+
+A coherent connectivity layer changes the incentives. It creates repeatable setup, consistent boundaries, and visible health. It turns “integration” from a heroic act into a maintained system.
+
+### Economies: when connectors proliferate, safety and discoverability matter more than features
+
+In a world where everyone can publish connectors, the limiting factor becomes curation.
+
+People won’t adopt what they can’t discover. They won’t trust what they can’t evaluate. And they can’t evaluate what requires a security degree to understand.
+
+So ecosystems that win tend to develop three things:
+
+*   A registry (so discovery is sane).
+*   Trust signals (so evaluation isn’t guesswork).
+*   A safe runtime (so trying new things doesn’t feel risky).
+
+That’s the arc of every mature extension ecosystem: browsers, phones, operating systems — and now AI connectivity.
+
+### Where Conduit fits (briefly, and on purpose)
+
+This is the backdrop for why we’re building Conduit.
+
+Not as another assistant, and not as a new place to type prompts — but as an intelligence hub that helps people connect AI clients to their world with sane defaults:
+
+*   Private knowledge bases that feel usable instead of bloated.
+*   Connector setup that doesn’t require ritual and repetition.
+*   Isolation that treats third-party code as untrusted by default.
+*   Clear controls so users can audit, revoke, and expire what’s stored.
+
+If we do this well, you shouldn’t feel like you “configured” anything. You should feel like your AI finally showed up to work with you — without asking you to become the wiring crew.
+
+<img
+  src="/blog/wiring-ai-without-duct-tape/fig-2.png"
+  alt="Hub to multiple clients diagram"
+  className="w-full rounded-2xl mb-4 mt-8"
+/>
+<p className="text-sm text-neutral-500 italic mt-2 mb-8 text-center">One hub, multiple clients, consistent controls.</p>
+
+### A quiet closing thought
+
+The first era of AI made language cheap.
+
+The next era will make coordination cheap — but only if we stop hand-wiring every interaction and start building trustworthy, repeatable connectivity.
+
+<img
+  src="/blog/wiring-ai-without-duct-tape/fig-3.png"
+  alt="The future of better plumbing"
+  className="w-full rounded-2xl mb-4 mt-8"
+/>
+<p className="text-sm text-neutral-500 italic mt-2 mb-8 text-center">The future doesn’t need more clever prompts. It needs better plumbing.</p>
+
+<div className="bg-secondary/30 rounded-lg p-6 my-12 text-sm">
+  <p className="mb-2 font-medium text-foreground">Part 2 of 2 in the Conduit series.</p>
+  <p className="text-muted-foreground">
+    Read the previous essay on personal context: <a href="/blog/bringing-private-context-to-ai-safely" className="underline decoration-1 underline-offset-2 hover:text-foreground">Bringing private context to AI safely</a>.
+  </p>
+</div>
