@@ -5,7 +5,6 @@ import { siteConfig } from "@/lib/site"
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
-    "/writing",
     "/tools",
     "/tools/kinetiq",
     "/tools/scientia",

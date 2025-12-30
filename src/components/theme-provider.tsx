@@ -22,7 +22,7 @@ function applyTheme(theme: ThemeName) {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = React.useState<ThemeName>("daylight")
+  const [theme, setThemeState] = React.useState<ThemeName>("night")
 
   React.useEffect(() => {
     let stored: ThemeName | null = null
@@ -31,10 +31,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } catch {
       stored = null
     }
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches
-    const initial = stored ?? (prefersDark ? "dark" : "daylight")
+    const initial = stored ?? "night"
     applyTheme(initial)
     setThemeState(initial)
   }, [])

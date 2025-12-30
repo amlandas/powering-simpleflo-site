@@ -10,6 +10,7 @@ export const metadata = buildMetadata({
 
 const toolItems: ToolIndexItem[] = [
   {
+    eyebrow: "AI tool database",
     title: "Kinetiq",
     excerpt:
       "Kinetiq helps you choose AI tools with less guesswork. You can browse a curated catalog, compare multiple options side by side, and use Ask AI Matchmaker to get tailored recommendations based on your needs. Matchmaker shows a percentage fit, explains why it made the call, and offers strong alternatives so you can decide with confidence.",
@@ -19,6 +20,7 @@ const toolItems: ToolIndexItem[] = [
     categories: ["Decision"],
   },
   {
+    eyebrow: "Knowledge explorer",
     title: "Scientia",
     excerpt:
       "Scientia is a research assistant that helps you ask better questions across your own materials. It retrieves the most relevant context, shows you what it used, and can combine world knowledge when your question needs outside background. It also supports A/B testing and graph-based exploration for deeper work, so you can learn what approach works best for your use case.",
@@ -28,6 +30,7 @@ const toolItems: ToolIndexItem[] = [
     categories: ["Knowledge"],
   },
   {
+    eyebrow: "Personal context + connector hub",
     title: "Conduit",
     excerpt:
       "Conduit is designed for people who want AI tools to feel personal and powerful without constantly re-uploading files and reconfiguring connectors. It helps manage MCP servers as a guided, secure experience, and it supports a private knowledge base so you can bring your own context to the tools you use every day. Instead of dumping piles of documents into a model, Conduit builds a usable knowledge layer and serves the precise context your AI tool needs.",

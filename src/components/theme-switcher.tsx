@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Moon, Sparkles, Star, Sun } from "lucide-react"
+import { Moon, Palette, Star, Sun } from "lucide-react"
 
 import { ThemeName, useTheme } from "@/components/theme-provider"
 import {
@@ -17,7 +17,7 @@ const themes = [
   { value: "daylight", label: "Daylight", icon: Sun },
   { value: "dark", label: "Dark", icon: Moon },
   { value: "night", label: "Night", icon: Star },
-  { value: "pastel", label: "Pastel", icon: Sparkles },
+  { value: "pastel", label: "Pastel", icon: Palette },
 ] as const
 
 export function ThemeSwitcher() {

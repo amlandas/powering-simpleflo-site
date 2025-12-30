@@ -1,12 +1,15 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 
 import { cn } from "@/lib/utils"
-import { EditorialCard } from "@/components/editorial"
+import { Button } from "@/components/ui/button"
+import { ChipRow, Eyebrow } from "@/components/editorial"
 
 export type ToolIndexItem = {
   title: string
+  eyebrow: string
   excerpt: string
   chips: string[]
   ctaLabel: string
@@ -27,7 +30,7 @@ export function ToolsIndex({ items }: { items: ToolIndexItem[] }) {
   }, [active, items])
 
   return (
-    <div className="space-y-10">
+    <div className="reading-width space-y-8">
       <div className="flex flex-wrap gap-2">
         {filters.map((filter) => {
           const isActive = filter === active
@@ -49,16 +52,22 @@ export function ToolsIndex({ items }: { items: ToolIndexItem[] }) {
           )
         })}
       </div>
-      <div className="editorial-grid">
-        {filteredItems.map((item) => (
-          <EditorialCard
-            key={item.title}
-            title={item.title}
-            excerpt={item.excerpt}
-            chips={item.chips}
-            ctaLabel={item.ctaLabel}
-            href={item.href}
-          />
+      <div className="space-y-10">
+        {filteredItems.map((item, index) => (
+          <div key={item.title} className="space-y-10">
+            <section className="space-y-4">
+              <Eyebrow>{item.eyebrow}</Eyebrow>
+              <h2 className="text-2xl font-semibold text-foreground">{item.title}</h2>
+              <p className="text-foreground/80">{item.excerpt}</p>
+              <ChipRow items={item.chips} />
+              <Button asChild className="rounded-full">
+                <Link href={item.href}>{item.ctaLabel}</Link>
+              </Button>
+            </section>
+            {index < filteredItems.length - 1 ? (
+              <hr className="border-border/60" />
+            ) : null}
+          </div>
         ))}
       </div>
     </div>

@@ -6,8 +6,7 @@ export const siteConfig = {
 }
 
 export const navLinks = [
-  { href: "/writing", label: "Writing" },
-  { href: "/tools", label: "Tools" },
+  { href: "/tools", label: "Capabilities" },
   { href: "/principles", label: "Principles" },
   { href: "/security", label: "Security" },
 ]
