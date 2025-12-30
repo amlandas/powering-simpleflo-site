@@ -27,7 +27,17 @@ export default async function BlogIndexPage() {
                         {posts.map((post) => (
                             <div key={post.slug} className="group">
                                 <a href={`/blog/${post.slug}`} className="block space-y-3">
-                                    <div className="aspect-[3/2] w-full rounded-md bg-secondary/50 group-hover:bg-secondary/70 transition-colors" />
+                                    {post.heroImage ? (
+                                        <div className="aspect-[3/2] w-full rounded-md overflow-hidden bg-secondary/50">
+                                            <img
+                                                src={post.heroImage}
+                                                alt={post.title}
+                                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                            />
+                                        </div>
+                                    ) : (
+                                        <div className="aspect-[3/2] w-full rounded-md bg-secondary/50 group-hover:bg-secondary/70 transition-colors" />
+                                    )}
                                     <div className="space-y-1">
                                         <h3 className="font-semibold text-lg leading-snug group-hover:underline decoration-1 underline-offset-2">
                                             {post.title}

@@ -13,6 +13,7 @@ export type BlogPost = {
   date: string
   readTime: string
   category: string
+  heroImage?: string
   content: React.ReactNode
 }
 
@@ -37,6 +38,7 @@ export async function getBlogPosts(): Promise<BlogPostMeta[]> {
         date: string
         readTime: string
         category: string
+        heroImage?: string
       }>({
         source,
         options: { parseFrontmatter: true }, // Ensure frontmatter is parsed
@@ -49,6 +51,7 @@ export async function getBlogPosts(): Promise<BlogPostMeta[]> {
         date: frontmatter.date,
         readTime: frontmatter.readTime,
         category: frontmatter.category,
+        heroImage: frontmatter.heroImage,
       }
     })
   )
@@ -71,6 +74,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
     date: string
     readTime: string
     category: string
+    heroImage?: string
   }>({
     source,
     components: mdxComponents,
@@ -85,6 +89,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
     date: frontmatter.date,
     readTime: frontmatter.readTime,
     category: frontmatter.category,
+    heroImage: frontmatter.heroImage,
   }
 }
 
