@@ -187,7 +187,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground antialiased text-[15px] md:text-[17px] leading-relaxed;
     background-image: var(--page-gradient);
     background-attachment: scroll;
     min-height: 100svh;
@@ -198,6 +198,7 @@
   h4 {
     font-family: var(--font-fraunces), "Times New Roman", serif;
     letter-spacing: -0.01em;
+    text-wrap: balance;
   }
   p {
     text-wrap: pretty;
@@ -213,6 +214,30 @@
   }
   .container-tight {
     @apply mx-auto w-full max-w-6xl px-6 md:px-10;
+  }
+  .reading-width {
+    @apply mx-auto w-full max-w-[72ch];
+  }
+  .editorial-grid {
+    @apply grid gap-6 md:grid-cols-2;
+  }
+  .library-grid {
+    @apply grid gap-6 md:grid-cols-3;
+  }
+  .card-quiet {
+    @apply rounded-[28px] border border-border/70 bg-card/70 p-6 shadow-sm;
+  }
+  .card-lead {
+    @apply rounded-[32px] border border-border/70 bg-card/80 p-8 shadow-sm;
+  }
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.22em] text-muted-foreground;
+  }
+  .dek {
+    @apply text-lg text-foreground/80;
+  }
+  .chip {
+    @apply rounded-full border border-border/70 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground;
   }
   .article-grid {
     @apply grid gap-y-6;
