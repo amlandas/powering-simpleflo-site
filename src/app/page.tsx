@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site"
 
 export const metadata = buildMetadata({
   title: "Simpleflo",
-  description: "Calm tools for clearer AI work.",
+  description: "Calm utilities for clearer AI work.",
   path: "/",
 })
 
@@ -34,7 +34,7 @@ export default async function HomePage() {
                 Clarity for AI work.
               </h1>
               <p className="dek">
-                Simpleflo is a small studio building calm tools for a noisy AI world. The goal is
+                Simpleflo is a small studio building calm utilities for a noisy AI world. The goal is
                 simple: help you get useful results from AI faster, without spending your time wiring
                 things together.
               </p>
@@ -43,7 +43,7 @@ export default async function HomePage() {
               <LeadCard
                 title="Less setup. More momentum."
                 paragraphs={[
-                  "AI work often breaks down in predictable places. You find a dozen tools that claim the same thing, but it is hard to compare them without bias. You collect documents and notes, but they stay scattered across folders and tabs. You install connectors and servers, but each client expects a different configuration and a different workflow.",
+                  "AI work often breaks down in predictable places. You find a dozen utilities that claim the same thing, but it is hard to compare them without bias. You collect documents and notes, but they stay scattered across folders and tabs. You install connectors and servers, but each client expects a different configuration and a different workflow.",
                   "Simpleflo exists to reduce that friction. Each tool is designed to make one part of the work feel clearer, more cohesive, and easier to trust.",
                 ]}
                 bullets={[
@@ -69,7 +69,7 @@ export default async function HomePage() {
               <EditorialCard
                 eyebrow="AI database"
                 title="Kinetiq"
-                excerpt="Kinetiq helps you choose AI tools with less guesswork. You can browse a curated catalog, compare multiple options side by side, and use Ask AI Matchmaker to get tailored recommendations based on your needs. Matchmaker shows a percentage fit, explains why it made the call, and offers strong alternatives so you can decide with confidence."
+                excerpt="Kinetiq helps you choose AI utilities with less guesswork. You can browse a curated catalog, compare multiple options side by side, and use Ask AI Matchmaker to get tailored recommendations based on your needs. Matchmaker shows a percentage fit, explains why it made the call, and offers strong alternatives so you can decide with confidence."
                 chips={["Discovery", "Matchmaker", "Comparisons"]}
                 ctaLabel="Open Kinetiq"
                 href="/go/kinetiq"
@@ -85,7 +85,7 @@ export default async function HomePage() {
               <EditorialCard
                 eyebrow="Personal context + connector hub"
                 title="Conduit"
-                excerpt="Conduit is designed for people who want AI tools to feel personal and powerful without constantly re-uploading files and reconfiguring connectors. It helps manage MCP servers as a guided, secure experience, and it supports a private knowledge base so you can bring your own context to the tools you use every day. Instead of dumping piles of documents into a model, Conduit builds a usable knowledge layer and serves the precise context your AI tool needs."
+                excerpt="Conduit is designed for people who want AI utilties to feel personal and powerful without constantly re-uploading files and reconfiguring connectors. It helps manage MCP servers as a guided, secure experience, and it supports a private knowledge base so you can bring your own context to the utilities you use every day. Instead of dumping piles of documents into a model, Conduit builds a usable knowledge layer and serves the precise context your AI utility needs."
                 chips={["Private knowledge", "MCP", "Isolation"]}
                 ctaLabel="Read Conduit"
                 href="/conduit"
