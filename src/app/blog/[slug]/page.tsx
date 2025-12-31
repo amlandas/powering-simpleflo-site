@@ -57,8 +57,12 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                             <span className="px-3 py-1 rounded-full border border-border bg-background/50">
                                 {post.category}
                             </span>
-                            <span>•</span>
-                            <time>{post.date}</time>
+                            {post.date && (
+                                <>
+                                    <span>•</span>
+                                    <time>{post.date}</time>
+                                </>
+                            )}
                             <span>•</span>
                             <span>{post.readTime}</span>
                         </div>

@@ -17,8 +17,12 @@ export function BlogCard({ post, className }: BlogCardProps) {
                 <div className="flex flex-col gap-3 flex-1">
                     <div className="flex items-center gap-3 text-xs text-muted-foreground font-medium uppercase tracking-wider">
                         <span className="text-secondary-foreground">{post.category}</span>
-                        <span>•</span>
-                        <time dateTime={post.date}>{post.date}</time>
+                        {post.date && (
+                            <>
+                                <span>•</span>
+                                <time dateTime={post.date}>{post.date}</time>
+                            </>
+                        )}
                     </div>
 
                     <h3 className="font-serif text-2xl leading-tight group-hover:text-primary transition-colors duration-200">

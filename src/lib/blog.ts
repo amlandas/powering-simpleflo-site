@@ -10,7 +10,7 @@ export type BlogPost = {
   slug: string
   title: string
   excerpt: string
-  date: string
+  date?: string
   readTime: string
   category: string
   heroImage?: string
@@ -35,7 +35,7 @@ export async function getBlogPosts(): Promise<BlogPostMeta[]> {
       const { frontmatter } = await compileMDX<{
         title: string
         excerpt: string
-        date: string
+        date?: string
         readTime: string
         category: string
         heroImage?: string
@@ -56,7 +56,11 @@ export async function getBlogPosts(): Promise<BlogPostMeta[]> {
     })
   )
 
-  return posts.sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1))
+  return posts.sort((a, b) => {
+    const dateA = a.date ? new Date(a.date).getTime() : 0
+    const dateB = b.date ? new Date(b.date).getTime() : 0
+    return dateA > dateB ? -1 : 1
+  })
 }
 
 export async function getBlogPost(slug: string): Promise<BlogPost | null> {
@@ -71,7 +75,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   const { content, frontmatter } = await compileMDX<{
     title: string
     excerpt: string
-    date: string
+    date?: string
     readTime: string
     category: string
     heroImage?: string
